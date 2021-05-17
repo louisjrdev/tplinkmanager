@@ -1,0 +1,12 @@
+[package]
+name = "tplink"
+version = "0.1.0"
+authors = ["Louis <17555062+louisjrdev@users.noreply.github.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tplinker = { git = "https://github.com/louisjrdev/tplinker" }
+text_io = "0.1.8"
+serde_json = "1.0"
