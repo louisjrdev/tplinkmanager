@@ -4,12 +4,16 @@ use crate::tplink::{TpLinkCliService};
 
 fn main(){
     let mut service = TpLinkCliService::new();
-    service
-        .get_device_selection()
-        .get_action_selection()
+    service.get_device_selection();
+
+    run_with_repeat(&mut service)
+}
+
+fn run_with_repeat(service: &mut TpLinkCliService){
+    service.get_action_selection()
         .execute_action();
 
-    println!("Run again? (y/n):");
+    println!("Run again for device? (y/n):");
     let mut repeat: String = read!();
 
     while repeat.is_empty() {
@@ -18,7 +22,7 @@ fn main(){
     }
 
     if repeat == "y"{
-        main();
+        run_with_repeat(service);
     }
 }
 
